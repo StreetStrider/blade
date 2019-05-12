@@ -1,6 +1,7 @@
 
 import delegate from 'delegate'
 
+
 export default function on (element, eventname, handler)
 {
 	/* delegated */

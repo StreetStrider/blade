@@ -1,5 +1,6 @@
 /* eslint-disable no-cond-assign */
 
+
 export default function empty (element)
 {
 	var ch
