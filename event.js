@@ -48,22 +48,3 @@ export function emit (element, eventname, data)
 
 	return element
 }
-
-
-/*
-import flyd from 'flyd'
-var { stream } = flyd
-
-import onto from '~lib/stream/onto'
-
-export function live (element, eventname)
-{
-	var handler = stream()
-
-	var d = on(element, eventname, handler)
-
-	onto(handler.end, d)
-
-	return handler
-}
-*/
