@@ -1,14 +1,8 @@
 
-
-export function html (...args)
-{
-	return λhtml(...args)
-}
-
-
 import curry from 'ramda/es/curry'
 
-var λhtml = curry((element, html) =>
+
+export var html = curry((element, html) =>
 {
 	if (html instanceof Element)
 	{
@@ -21,12 +15,7 @@ var λhtml = curry((element, html) =>
 })
 
 
-export function text (...args)
-{
-	return λtext(...args)
-}
-
-var λtext = curry((element, text) =>
+export var text = curry((element, text) =>
 {
 	if (text instanceof Element)
 	{

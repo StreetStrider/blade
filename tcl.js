@@ -1,14 +1,10 @@
 
-
-export default function tcl (...args)
-{
-	return λtcl(...args)
-}
-
-
 import curry from 'ramda/es/curry'
 
-var λtcl = curry((element, classname, state) =>
+
+export default tcl
+
+var tcl = curry((element, classname, state) =>
 {
 	if (classname instanceof Element)
 	{
