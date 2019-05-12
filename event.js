@@ -1,7 +1,9 @@
 
 
-export default function on (element, eventname, handler)
+export default function on (element, eventname, handler, options)
 {
+	options && (options = { ...options })
+
 	/* delegated */
 	if (Array.isArray(element))
 	{
@@ -19,24 +21,25 @@ export default function on (element, eventname, handler)
 			}
 		}
 
-		element.addEventListener(eventname, handler__delegated)
+		element.addEventListener(eventname, handler__delegated, options)
 
 		return () =>
 		{
-			element.removeEventListener(eventname, handler__delegated)
+			element.removeEventListener(eventname, handler__delegated, options)
 
 			element = null
 			handler = null
+			options = null
 		}
 	}
 	/* direct */
 	else
 	{
-		element.addEventListener(eventname, handler)
+		element.addEventListener(eventname, handler, options)
 
 		return () =>
 		{
-			element.removeEventListener(eventname, handler)
+			element.removeEventListener(eventname, handler, options)
 
 			element = null
 			handler = null
