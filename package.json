@@ -1,0 +1,28 @@
+{
+     "name": "blade",
+  "version": "0.0.0",
+
+  "scripts":
+  {
+    "test": "npm run st",
+    "st": "eslint *.js"
+  },
+
+  "dependencies":
+  {
+    "ramda":
+      "0.25",
+
+    "delegate":
+      "3"
+  },
+
+  "devDependencies":
+  {
+    "eslint":
+      "5",
+
+    "js-outlander":
+      "StrangeTransistor/js-outlander#2.5.0"
+  }
+}
