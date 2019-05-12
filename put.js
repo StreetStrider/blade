@@ -1,3 +1,6 @@
+// TODO: prepend
+// TODO: after
+// TODO: before
 
 import curry from 'ramda/es/curry'
 
