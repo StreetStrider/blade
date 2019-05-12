@@ -1,6 +1,4 @@
 
-import delegate from 'delegate'
-
 
 export default function on (element, eventname, handler)
 {
@@ -11,11 +9,21 @@ export default function on (element, eventname, handler)
 		selector = element[1]
 		element  = element[0]
 
-		var d = delegate(element, selector, eventname, handler)
+		function handler__delegated (e)
+		{
+			e.delegateTarget = e.target.closest(selector)
+
+			if (e.delegateTarget)
+			{
+				handler.call(element, e)
+			}
+		}
+
+		element.addEventListener(eventname, handler__delegated)
 
 		return () =>
 		{
-			;(d.destroy || d[0].destroy)()
+			element.removeEventListener(eventname, handler__delegated)
 
 			element = null
 			handler = null

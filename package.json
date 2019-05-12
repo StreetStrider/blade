@@ -11,10 +11,7 @@
   "dependencies":
   {
     "ramda":
-      "0.25",
-
-    "delegate":
-      "3"
+      "0.25"
   },
 
   "devDependencies":
