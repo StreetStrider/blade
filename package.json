@@ -7,7 +7,8 @@
     "test": "npm run st && npm run unit",
 
     "st": "eslint *.js test/",
-    "unit": "node -r esm test/test"
+    "unit1": "node -r esm test/test",
+    "unit": "mocha test/*.test.js"
   },
 
   "dependencies":
@@ -18,19 +19,28 @@
 
   "devDependencies":
   {
+    "esm":
+      "3",
+
+    "console-ultimate":
+      "3",
+
+
     "eslint":
       "5",
 
     "js-outlander":
       "StrangeTransistor/js-outlander#2.5.0",
 
-    "esm":
-      "3",
+
+    "mocha":
+      "6",
+
+    "chai":
+      "4",
+
 
     "jsdom":
-      "15",
-
-    "console-ultimate":
-      "3"
+      "15"
   }
 }
