@@ -4,6 +4,8 @@ import { JSDOM } from 'jsdom'
 var globals =
 [
 	'Element',
+	'DocumentFragment',
+	'Text',
 	'CustomEvent',
 	'document'
 ]
