@@ -8,22 +8,47 @@ import { emit } from '../event'
 
 describe('event', () =>
 {
-	it('works', () =>
+	it('on and delegation', () =>
 	{
-		document.body.innerHTML = `<div>foo <span class='mark'>bar</span></div>`
+		var $body = document.body
+
+		$body.innerHTML = `<div>foo <span class='mark'>bar</span></div>`
 
 		var $body = document.body
 		var $div  = qs($body, 'div')
 		var $span = qs($body, 'span')
 
-		on($div, 'e1', (e) => console.info('div', e.detail))
-		on($span, 'e1', (e) => console.info('span', e.detail))
-		on([ $div, '.mark' ], 'e1', (e) => console.info('delegated .mark', e.detail))
-		on([ $body, 'div' ], 'e1', (e) => console.info('delegated div', e.detail))
+		var buffer = []
+		function push (name)
+		{
+			return (e) =>
+			{
+				buffer.push([ name, e.detail ])
+			}
+		}
 
-		emit($span, 'e1', { f: 'span' })
-		emit($div, 'e1', { f: 'div' })
+		on($body, 'e1', push('body'))
+		on($div,  'e1', push('div'))
+		on($span, 'e1', push('span'))
+		on([ $div, '.mark' ], 'e1', push('delegated .mark'))
+		on([ $body, 'div' ],  'e1', push('delegated div'))
 
-		expect(1).ok
+		on($div, 'e2', expect.fail)
+
+		emit($span, 'e1', { n: 1, f: 'span' })
+		emit($div,  'e1', { n: 2, f: 'div' })
+
+		expect(buffer).deep.eq(
+		[
+			[ 'span', { n: 1, f: 'span' } ],
+			[ 'div', { n: 1, f: 'span' } ],
+			[ 'delegated .mark', { n: 1, f: 'span' } ],
+			[ 'body', { n: 1, f: 'span' } ],
+			[ 'delegated div', { n: 1, f: 'span' } ],
+
+			[ 'div', { n: 2, f: 'div' } ],
+			[ 'body', { n: 2, f: 'div' } ],
+			[ 'delegated div', { n: 2, f: 'div' } ]
+		])
 	})
 })
