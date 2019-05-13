@@ -1,8 +1,11 @@
 
+import { expect } from 'chai'
+
+
 describe('event', () =>
 {
 	it('works', () =>
 	{
-		console.info(1)
+		expect(1).ok
 	})
 })

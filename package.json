@@ -8,7 +8,7 @@
 
     "st": "eslint *.js test/",
     "unit1": "node -r esm test/test",
-    "unit": "mocha test/*.test.js"
+    "unit": "mocha -r esm test/*.test.js"
   },
 
   "dependencies":
