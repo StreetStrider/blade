@@ -7,8 +7,7 @@
     "test": "npm run st && npm run unit",
 
     "st": "eslint *.js test/",
-    "unit1": "node -r esm test/test",
-    "unit": "mocha -r esm test/*.test.js"
+    "unit": "mocha -r esm -r test/global test/*.test.js"
   },
 
   "dependencies":
