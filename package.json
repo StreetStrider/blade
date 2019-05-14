@@ -13,6 +13,8 @@
     "unit": "mocha -r esm -r test/global test/*.test.js"
   },
 
+  "files": [ "*.js" ],
+
   "dependencies":
   {
     "ramda":
