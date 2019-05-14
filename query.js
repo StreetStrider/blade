@@ -1,4 +1,5 @@
 /* eslint-disable complexity */
+// TODO: test
 
 import curry from 'ramda/es/curry'
 
