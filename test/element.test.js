@@ -4,7 +4,7 @@ import { expect } from 'chai'
 import $element from '../element'
 
 
-describe.only('element', () =>
+describe('element', () =>
 {
 	it('creates element', () =>
 	{
