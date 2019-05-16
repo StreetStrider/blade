@@ -1,10 +1,8 @@
 /* eslint-disable complexity */
 // TODO: test
 
-import curry from 'ramda/es/curry'
 
-
-export default curry((element, query) =>
+export default (element, query) =>
 {
 	if (query instanceof Element)
 	{
@@ -26,4 +24,4 @@ export default curry((element, query) =>
 	}
 
 	return element.querySelector(query)
-})
+}
