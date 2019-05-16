@@ -1,5 +1,4 @@
 /* eslint-disable complexity */
-// TODO: test
 
 
 export default (element, query) =>
