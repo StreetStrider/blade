@@ -9,7 +9,7 @@
   {
     "test": "npm run st && npm run unit",
 
-    "st": "eslint *.js test/",
+    "st": "eslint .",
     "unit": "mocha -r esm -r test/global test/*.test.js"
   },
 
