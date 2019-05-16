@@ -1,5 +1,5 @@
 
-import curry from 'ramda/es/curry'
+import { curry } from 'rambda/src/curry'
 
 
 export var html = curry((element, html) =>

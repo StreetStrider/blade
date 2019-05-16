@@ -4,7 +4,7 @@
 // TODO: after
 // TODO: before
 
-import curry from 'ramda/es/curry'
+import { curry } from 'rambda/src/curry'
 
 
 export default curry((where, what) =>

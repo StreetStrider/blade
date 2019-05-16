@@ -1,6 +1,6 @@
 // TODO: test
 
-import curry from 'ramda/es/curry'
+import { curry } from 'rambda/src/curry'
 
 
 export default tcl
