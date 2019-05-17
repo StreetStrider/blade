@@ -1,6 +1,6 @@
 # api
-## `$element` & `tcl`
-```js
+## element creation and class toggling
+```typescript
 type Classes = (Classmap | Classlist | Classname)
 
 type Classmap  = { [Classname]: any }
@@ -22,14 +22,22 @@ tcls<T: Element> (element: T, classes: Classes, state: ?any): T
 tc<T: Element> (element: T, classname: Classname, state: any): T
 ```
 
-## event
+## event capturing and emitting
+```js
+type Disposer = () => void
 
-## put
+on (target: EventTarget, eventname: string, listener: EventListener): Disposer
+on ([ target: EventTarget, delegated selector: string ], eventname: string, listener: EventListener): Disposer
 
-## html constructor
+emit<T: EventTarget> (target: T, eventname: string, detail data: any): T
+```
+
+## put element to another element
+
+## arbitary html constructing
 
 ## other
-```js
+```ts
 empty<T: Node> (node: T): T
 
 curried html<T: Element> (T, string): T
