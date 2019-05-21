@@ -1,9 +1,6 @@
-// TODO: test
 
 import { curry } from 'rambda/src/curry'
 
-
-export default tcl
 
 var tcl = curry((element, classname, state) =>
 {
@@ -22,6 +19,8 @@ var tcl = curry((element, classname, state) =>
 
 	return tc(element, classname, state)
 })
+
+export default tcl
 
 
 export function tcls (element, classes, state)
