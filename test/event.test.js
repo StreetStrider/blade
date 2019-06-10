@@ -51,4 +51,25 @@ describe('event', () =>
 			[ 'delegated div', { n: 2, f: 'div' } ]
 		])
 	})
+
+	it('disposer works', () =>
+	{
+		var c = 0
+		var $body = document.body
+
+		var off = on($body, 'e1', once)
+
+		function once ()
+		{
+			c = (c + 1)
+		}
+
+		emit($body, 'e1')
+		off()
+		emit($body, 'e1')
+		// off()
+		emit($body, 'e1')
+
+		expect(c).eq(1)
+	})
 })
