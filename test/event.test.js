@@ -69,7 +69,15 @@ describe('event', () =>
 		emit($body, 'e1')
 		// off()
 		emit($body, 'e1')
-
 		expect(c).eq(1)
+
+		var off = on([ $body, '*' ], 'e2', once)
+
+		emit($body, 'e2')
+		off()
+		emit($body, 'e2')
+		// off()
+		emit($body, 'e1')
+		expect(c).eq(2)
 	})
 })
