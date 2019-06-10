@@ -67,7 +67,7 @@ describe('event', () =>
 		emit($body, 'e1')
 		off()
 		emit($body, 'e1')
-		// off()
+		off()
 		emit($body, 'e1')
 		expect(c).eq(1)
 
@@ -76,7 +76,7 @@ describe('event', () =>
 		emit($body, 'e2')
 		off()
 		emit($body, 'e2')
-		// off()
+		off()
 		emit($body, 'e1')
 		expect(c).eq(2)
 	})
