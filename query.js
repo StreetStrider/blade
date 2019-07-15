@@ -1,4 +1,4 @@
-/* eslint-disable complexity */
+/* eslint complexity: [ "error", 7 ] */
 
 
 export default (element, query) =>
