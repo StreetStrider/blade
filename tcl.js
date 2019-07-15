@@ -1,3 +1,4 @@
+/* eslint complexity: [ "error", 6 ] */
 
 import { curry } from 'rambda/src/curry'
 
@@ -31,10 +32,10 @@ export function tcls (element, classes, state)
 	}
 	else if (Array.isArray(classes))
 	{
-		classes.forEach(classname =>
+		for (let classname of classes)
 		{
 			tc(element, classname, state)
-		})
+		}
 	}
 	else
 	{
