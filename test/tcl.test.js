@@ -144,6 +144,40 @@ describe('tcls', () =>
 		tcls($, [ 'bar', 'baz' ], null)
 		ex_cl($, 'foo baz')
 	})
+
+	it('object ()', () =>
+	{
+		var $ = $div()
+
+		tcls($, { foo: true, bar: true, baz: false })
+		ex_cl($, 'foo bar')
+	})
+
+	it('object (true)', () =>
+	{
+		var $ = $div()
+
+		tcls($, { foo: true, bar: true, baz: false }, true)
+		ex_cl($, 'foo bar baz')
+	})
+
+	it('object (false)', () =>
+	{
+		var $ = $div()
+
+		tcls($, { foo: true, bar: true, baz: false }, true)
+		tcls($, { bar: true }, false)
+		ex_cl($, 'foo baz')
+	})
+
+	it('object (null)', () =>
+	{
+		var $ = $div()
+
+		tcls($, { foo: true, bar: false }, true)
+		tcls($, { bar: false, baz: true }, null)
+		ex_cl($, 'foo baz')
+	})
 })
 
 
