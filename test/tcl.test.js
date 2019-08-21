@@ -90,6 +90,14 @@ describe('tcl', () =>
 
 describe('tcls', () =>
 {
+	it('null', () =>
+	{
+		var $ = $div()
+
+		tcls($)
+		ex_cl($, '')
+	})
+
 	it('string', () =>
 	{
 		var $ = $div()

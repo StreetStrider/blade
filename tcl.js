@@ -1,4 +1,4 @@
-/* eslint complexity: [ "error", 6 ] */
+/* eslint complexity: [ "error", 7 ] */
 
 import { curry } from 'rambda/src/curry'
 
@@ -26,11 +26,15 @@ export default tcl
 
 export function tcls (element, classes, state)
 {
+	if (! classes)
+	{
+		return element
+	}
 	if (typeof classes === 'string')
 	{
-		tc(element, classes, state)
+		return tc(element, classes, state)
 	}
-	else if (Array.isArray(classes))
+	if (Array.isArray(classes))
 	{
 		for (let classname of classes)
 		{
