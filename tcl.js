@@ -34,7 +34,7 @@ export function tcls (element, classes, state)
 	{
 		return tc(element, classes, state)
 	}
-	if (Array.isArray(classes))
+	if (typeof classes[Symbol.iterator] === 'function')
 	{
 		for (let classname of classes)
 		{

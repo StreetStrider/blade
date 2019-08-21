@@ -152,6 +152,14 @@ describe('tcls', () =>
 		ex_cl($, 'foo baz')
 	})
 
+	it('iterable', () =>
+	{
+		var $ = $div()
+
+		tcls($, new Set([ 'foo', 'bar' ]))
+		ex_cl($, 'foo bar')
+	})
+
 	it('object ()', () =>
 	{
 		var $ = $div()
