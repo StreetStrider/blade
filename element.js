@@ -1,4 +1,3 @@
-/* eslint-disable complexity */
 // TODO: coverage
 
 import { tcls } from './tcl'
@@ -16,10 +15,7 @@ export default function $element (tag, classes, content)
 		var $ = document.createElementNS(tag[0], tag[1])
 	}
 
-	if (classes)
-	{
-		tcls($, classes)
-	}
+	tcls($, classes)
 
 	if (typeof content === 'string')
 	{
