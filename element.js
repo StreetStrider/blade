@@ -39,10 +39,14 @@ export function $div (classes, content)
 	return $element('div', classes, content)
 }
 
-
 export function $span (classes, content)
 {
 	return $element('span', classes, content)
+}
+
+export function $button (classes, content)
+{
+	return $element('button', classes, content)
 }
 
 
