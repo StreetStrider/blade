@@ -29,6 +29,7 @@ export default function on (element, eventname, handler, options)
 
 			element.removeEventListener(eventname, handler__delegated, options)
 
+			selector = null
 			element = null
 			handler = null
 			options = null
@@ -47,6 +48,7 @@ export default function on (element, eventname, handler, options)
 
 			element = null
 			handler = null
+			options = null
 		}
 	}
 }
