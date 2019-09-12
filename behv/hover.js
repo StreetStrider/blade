@@ -18,8 +18,8 @@ export default function hover (element_family, handler, options)
 
 	for (let element of element_family)
 	{
-		d.push(on(element, 'mouseenter', schedule(up, options.enter)))
-		d.push(on(element, 'mouseleave', schedule(down, options.leave)))
+		d.push(on(element, 'mouseover', schedule(up, options.enter)))
+		d.push(on(element, 'mouseout',  schedule(down, options.leave)))
 	}
 
 	d = compose(...d)
