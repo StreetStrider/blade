@@ -16,7 +16,8 @@
   "files":
   [
     "*.js",
-    "!.eslintrc.js"
+    "!.eslintrc.js",
+    "behv/"
   ],
 
   "dependencies":
