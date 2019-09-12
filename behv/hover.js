@@ -6,7 +6,7 @@ import on from '../event'
 
 export default function hover (element_family, handler, options)
 {
-	options = { ...defaults, ...(options || {}) }
+	options = { ...defaults, ...options }
 
 	if (! (element_family instanceof Set))
 	{
