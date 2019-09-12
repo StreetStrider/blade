@@ -37,7 +37,7 @@ export default function hover (element_family, handler, options)
 	}
 
 
-	var state = false
+	var state = options.state
 
 	function up (target)
 	{
@@ -88,4 +88,5 @@ var defaults =
 	enter: 0,
 	leave: 500,
 	predicate: () => true,
+	state: false,
 }
