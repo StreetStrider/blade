@@ -25,7 +25,7 @@ export default function on (element, eventname, handler, options)
 
 		return () =>
 		{
-			if (! element) return
+			if (! element) { return }
 
 			element.removeEventListener(eventname, handler__delegated, options)
 
@@ -42,7 +42,7 @@ export default function on (element, eventname, handler, options)
 
 		return () =>
 		{
-			if (! element) return
+			if (! element) { return }
 
 			element.removeEventListener(eventname, handler, options)
 
