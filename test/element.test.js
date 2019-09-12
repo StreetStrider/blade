@@ -1,7 +1,9 @@
 
 import { expect } from 'chai'
 
-import $element from '../element'
+import $element   from '../element'
+import { $text }  from '../html'
+import { $$html } from '../html'
 
 
 describe('element', () =>
@@ -52,6 +54,18 @@ describe('element', () =>
 		expect_element($, HTMLDivElement, 'div')
 		expect_classname($, 'foo')
 		expect($.innerHTML).eq('<span>c2</span>')
+
+		//
+		var $ = $element('div', null, $text('c3'))
+
+		expect_element($, HTMLDivElement, 'div')
+		expect($.textContent).eq('c3')
+
+		//
+		var $ = $element('div', null, $$html('<span>c3</span>'))
+
+		expect_element($, HTMLDivElement, 'div')
+		expect($.innerHTML).eq('<span>c3</span>')
 
 		//
 		var $e1 = $element('span', null, 'e1')

@@ -3,6 +3,7 @@ import { JSDOM } from 'jsdom'
 
 var globals =
 [
+	'Node',
 	'Element',
 	'HTMLDivElement',
 

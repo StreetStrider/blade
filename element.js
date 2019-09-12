@@ -21,13 +21,13 @@ export default function $element (tag, classes, content)
 	{
 		$.textContent = content
 	}
+	else if (content instanceof Node)
+	{
+		put($, content)
+	}
 	else if (Array.isArray(content))
 	{
 		content.forEach(put($))
-	}
-	else if (content instanceof Element)
-	{
-		put($, content)
 	}
 
 	return $

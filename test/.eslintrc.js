@@ -14,5 +14,6 @@ module.exports =
 	rules:
 	{
 		'no-unused-expressions': 0,
+		'max-statements': 0,
 	}
 }
