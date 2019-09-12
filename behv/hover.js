@@ -29,19 +29,19 @@ export default function hover (element_family, handler, options)
 
 	function schedule (fn, thrs)
 	{
-		return () =>
+		return (e) =>
 		{
 			clearTimeout(t)
-			t = setTimeout(fn, thrs)
+			t = setTimeout(() => fn(e.target), thrs)
 		}
 	}
 
 
 	var state = false
 
-	function up ()
+	function up (target)
 	{
-		emit(options.predicate())
+		emit(options.predicate(), target)
 	}
 
 	function down ()
@@ -49,12 +49,20 @@ export default function hover (element_family, handler, options)
 		emit(false)
 	}
 
-	function emit (new_state)
+	function emit (new_state, target)
 	{
 		if (state !== new_state)
 		{
 			state = new_state
-			handler(state)
+
+			if (state)
+			{
+				handler(true, target)
+			}
+			else
+			{
+				handler(false)
+			}
 		}
 	}
 
