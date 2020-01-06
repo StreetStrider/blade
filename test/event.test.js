@@ -1,6 +1,4 @@
 
-import { expect } from 'chai'
-
 import qs from '../query'
 import on from '../event'
 import { emit } from '../event'

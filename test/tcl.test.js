@@ -1,7 +1,5 @@
 // TODO: coverage
 
-import { expect } from 'chai'
-
 import tcl from '../tcl'
 import { tcls } from '../tcl'
 

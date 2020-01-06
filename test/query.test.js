@@ -1,7 +1,5 @@
 /* eslint-disable max-len */
 
-import { expect } from 'chai'
-
 import qs from '../query'
 
 

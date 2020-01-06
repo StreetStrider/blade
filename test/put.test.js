@@ -1,6 +1,4 @@
 
-import { expect } from 'chai'
-
 import $element from '../element'
 
 import put from '../put'

@@ -1,6 +1,4 @@
 
-import { expect } from 'chai'
-
 import { html } from '../inner'
 import { text } from '../inner'
 

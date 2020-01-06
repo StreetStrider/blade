@@ -1,7 +1,5 @@
 /* eslint-disable max-len */
 
-import { expect } from 'chai'
-
 import $html from '../html'
 import { $$html } from '../html'
 import { $text } from '../html'

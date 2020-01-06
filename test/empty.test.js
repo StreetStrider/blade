@@ -1,6 +1,4 @@
 
-import { expect } from 'chai'
-
 import empty from '../empty'
 
 

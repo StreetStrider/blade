@@ -1,6 +1,4 @@
 
-import { expect } from 'chai'
-
 import $element   from '../element'
 import { $text }  from '../html'
 import { $$html } from '../html'
