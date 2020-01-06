@@ -23,7 +23,7 @@
   "dependencies":
   {
     "rambda":
-      "2.7.1"
+      "4"
   },
 
   "devDependencies":
