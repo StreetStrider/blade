@@ -21,6 +21,9 @@ describe('order', () =>
 		expect(order(ch[2])).eq(2)
 		expect(order(ch[1])).eq(1)
 
-		// expect(order($div())).eq(-1)
+		expect(order(null)).eq(-1)
+		expect(order(true)).eq(-1)
+		expect(order({})).eq(-1)
+		expect(order($div())).eq(-1)
 	})
 })
