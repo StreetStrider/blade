@@ -1,4 +1,8 @@
 
+import { expect } from 'chai'
+
+global.expect = expect
+
 import { JSDOM } from 'jsdom'
 
 var globals =
