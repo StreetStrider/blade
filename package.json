@@ -1,6 +1,6 @@
 {
      "name": "blade",
-  "version": "0.3.0-pre1",
+  "version": "0.3.0",
   "description": "lightweight DOM manipulation library",
 
   "license": "ISC",
