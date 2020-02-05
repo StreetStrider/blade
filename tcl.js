@@ -36,7 +36,7 @@ export function tcls (element, classes, state)
 	}
 	if (typeof classes[Symbol.iterator] === 'function')
 	{
-		for (let classname of classes)
+		for (const classname of classes)
 		{
 			tc(element, classname, state)
 		}
@@ -45,7 +45,7 @@ export function tcls (element, classes, state)
 	}
 	if (Object(classes) === classes)
 	{
-		for (let key in classes)
+		for (const key in classes)
 		{
 			if (state !== void 0)
 			{

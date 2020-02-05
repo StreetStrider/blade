@@ -16,7 +16,7 @@ export default function hover (element_family, handler, options)
 
 	var d = []
 
-	for (let element of element_family)
+	for (const element of element_family)
 	{
 		d.push(on(element, 'mouseover', schedule(up, options.enter)))
 		d.push(on(element, 'mouseout',  schedule(down, options.leave)))

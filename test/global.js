@@ -18,7 +18,7 @@ var globals =
 ]
 var { window } = (new JSDOM)
 
-for (let g of globals)
+for (const g of globals)
 {
 	global[g] = window[g]
 }
