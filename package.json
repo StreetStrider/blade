@@ -7,10 +7,11 @@
 
   "scripts":
   {
-    "test": "npm run st && npm run unit",
+     "test": "npm run st && npm run unit",
 
-    "st": "eslint .",
-    "unit": "mocha -r esm -r test/global test/*.test.js"
+       "st": "eslint .",
+     "unit": "mocha -r esm -r test/global test/*.test.js",
+    "cover": "c8 -r html -r text --all npm run unit"
   },
 
   "files":
@@ -47,6 +48,10 @@
 
     "chai":
       "4",
+
+
+    "c8":
+      "7",
 
 
     "jsdom":

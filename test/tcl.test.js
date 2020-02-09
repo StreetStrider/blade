@@ -1,4 +1,3 @@
-// TODO: coverage
 
 import tcl from '../tcl'
 import { tcls } from '../tcl'
