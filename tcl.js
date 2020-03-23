@@ -67,6 +67,7 @@ export function tc (element, classname, state = true)
 	; (state === null) && (state = void 0)
 	; (state === tc)   && (state = void 0)
 	; (state === tcl)  && (state = void 0)
+	; (state === tcls) && (state = void 0)
 
 	element.classList.toggle(classname, state)
 

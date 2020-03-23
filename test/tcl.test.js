@@ -1,5 +1,6 @@
 
 import tcl from '../tcl'
+import { tc } from '../tcl'
 import { tcls } from '../tcl'
 
 
@@ -22,14 +23,24 @@ describe('tcl', () =>
 	{
 		var $ = $div()
 
-		tcl($, 'foo', null)
-		ex_cl($, 'foo')
+		tcl($, 'null', true)
+		tcl($, 'tcl', true)
+		tcl($, 'tc', true)
+		tcl($, 'tcls', true)
 
-		tcl($, 'foo', null)
+		ex_cl($, 'null tcl tc tcls')
+
+		tcl($, 'null', null)
+		ex_cl($, 'tcl tc tcls')
+
+		tcl($, 'tcl', tcl)
+		ex_cl($, 'tc tcls')
+
+		tcl($, 'tc', tc)
+		ex_cl($, 'tcls')
+
+		tcl($, 'tcls', tcls)
 		ex_cl($, '')
-
-		tcl($, 'foo', tcl)
-		ex_cl($, 'foo')
 	})
 
 	it('(E, S, C)', () =>
