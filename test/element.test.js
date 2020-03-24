@@ -73,6 +73,11 @@ describe('element', () =>
 
 		expect_element($, HTMLDivElement, 'div')
 		expect($.innerHTML).eq('<span>e1</span><span>e2</span>')
+
+		var $ = $element('div', null, [ $e1, null, $e2, void 0, false ])
+
+		expect_element($, HTMLDivElement, 'div')
+		expect($.innerHTML).eq('<span>e1</span><span>e2</span>')
 	})
 })
 

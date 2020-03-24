@@ -24,6 +24,7 @@ export default function $element (tag, classes, content)
 	{
 		put($, content)
 	}
+	// TODO: handle Iterable?
 	else if (Array.isArray(content))
 	{
 		content.forEach(put($))
