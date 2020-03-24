@@ -18,6 +18,27 @@ describe('put', () =>
 		expect($body.innerHTML, '<span>foo</span>')
 	})
 
+	it('put text', () =>
+	{
+		$body.innerHTML = ''
+		put($body, 'foo')
+
+		expect($body.innerHTML, 'foo')
+	})
+
+	it('put null', () =>
+	{
+		$body.innerHTML = ''
+		put($body, null)
+		expect($body.innerHTML, '')
+
+		put($body, void 0)
+		expect($body.innerHTML, '')
+
+		put($body, false)
+		expect($body.innerHTML, '')
+	})
+
 	it('curry put', () =>
 	{
 		var $put = put($body)
